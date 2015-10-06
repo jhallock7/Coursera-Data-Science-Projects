@@ -1,5 +1,5 @@
 # Electric Power Consumption
-*Jeffrey Hallock*  
+Jeffrey Hallock  
 
 This document is an expansion of an R script written for Project 1 of the
 Coursera course "Exploratory Data Analysis" from Johns Hopkins University.
@@ -82,7 +82,7 @@ hist(dataFil$Global_active_power, col = "red",
      xlab = "Global Active Power (kilowatts)", main = "Global Active Power")
 ```
 
-![](4.1_Electric_Power_Consumption_files/figure-html/unnamed-chunk-4-1.png) 
+![](JHU_4.1_Electric_Power_Consumption_files/figure-html/unnamed-chunk-4-1.png) 
 
 ```r
 g1 <- (ggplot(dataFil, aes(x = Global_active_power))
@@ -91,7 +91,7 @@ g1 <- (ggplot(dataFil, aes(x = Global_active_power))
 g1
 ```
 
-![](4.1_Electric_Power_Consumption_files/figure-html/unnamed-chunk-4-2.png) 
+![](JHU_4.1_Electric_Power_Consumption_files/figure-html/unnamed-chunk-4-2.png) 
 
 ### Plot 2
 
@@ -100,7 +100,7 @@ plot(dataFil$Date_Time, dataFil$Global_active_power, type = "l",
      ylab = "Global Active Power (kilowatts)", xlab = "")
 ```
 
-![](4.1_Electric_Power_Consumption_files/figure-html/unnamed-chunk-5-1.png) 
+![](JHU_4.1_Electric_Power_Consumption_files/figure-html/unnamed-chunk-5-1.png) 
 
 ```r
 g2 <- (ggplot(dataFil, aes(x = Date_Time, y = Global_active_power))
@@ -108,7 +108,7 @@ g2 <- (ggplot(dataFil, aes(x = Date_Time, y = Global_active_power))
 g2
 ```
 
-![](4.1_Electric_Power_Consumption_files/figure-html/unnamed-chunk-5-2.png) 
+![](JHU_4.1_Electric_Power_Consumption_files/figure-html/unnamed-chunk-5-2.png) 
 
 ### Plot 3
 
@@ -120,7 +120,7 @@ legend("topright", lty = c(1,1,1), lwd = c(2,2,2), col = c("black", "red", "blue
        legend = c("Sub_metering_1", "Sub_metering_2", "Sub_metering_3"))
 ```
 
-![](4.1_Electric_Power_Consumption_files/figure-html/unnamed-chunk-6-1.png) 
+![](JHU_4.1_Electric_Power_Consumption_files/figure-html/unnamed-chunk-6-1.png) 
 
 ```r
 cols <- c("Kitchen"= "black", "Laundry room" = "#00BFC4", "Water heater / AC" = "#F8766D")
@@ -134,7 +134,7 @@ g3 <- (ggplot(dataFil)
 g3
 ```
 
-![](4.1_Electric_Power_Consumption_files/figure-html/unnamed-chunk-6-2.png) 
+![](JHU_4.1_Electric_Power_Consumption_files/figure-html/unnamed-chunk-6-2.png) 
 
 To automate the color selection, the three different submetering measurements need to be on separate rows, with the room being a factor variable. Note that due to a bug with the melt function, the "Date_Time" variable has to be temporarily converted to a character string.
 
@@ -152,7 +152,7 @@ g4 <- (ggplot(data_melt)
 g4
 ```
 
-![](4.1_Electric_Power_Consumption_files/figure-html/unnamed-chunk-7-1.png) 
+![](JHU_4.1_Electric_Power_Consumption_files/figure-html/unnamed-chunk-7-1.png) 
 
 ### Plot 4
 
@@ -172,7 +172,7 @@ plot(dataFil$Date_Time, dataFil$Global_reactive_power,
      type = "l", ylab = "Global reactive power", xlab = "datetime")
 ```
 
-![](4.1_Electric_Power_Consumption_files/figure-html/unnamed-chunk-8-1.png) 
+![](JHU_4.1_Electric_Power_Consumption_files/figure-html/unnamed-chunk-8-1.png) 
 
 ```r
 g5 <- (ggplot(dataFil, aes(x = Date_Time, y = Global_active_power))
@@ -202,4 +202,4 @@ g8 <- (ggplot(dataFil, aes(x = Date_Time, y = Global_reactive_power))
 grid.arrange(g5, g6, g7, g8, ncol=2, nrow=2)
 ```
 
-![](4.1_Electric_Power_Consumption_files/figure-html/unnamed-chunk-8-2.png) 
+![](JHU_4.1_Electric_Power_Consumption_files/figure-html/unnamed-chunk-8-2.png) 

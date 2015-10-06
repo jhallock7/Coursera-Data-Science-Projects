@@ -1,5 +1,5 @@
 # Personal Activity Tracking
-*Jeffrey Hallock*  
+Jeffrey Hallock  
 
 This document was written for Project 1 of the Coursera course "Reproducible Research" from Johns Hopkins University.
 
@@ -157,7 +157,7 @@ g1 <- (ggplot(sum_by_day, aes(Steps))
 g1
 ```
 
-![](5.1_Personal_Activity_Tracking_files/figure-html/unnamed-chunk-5-1.png) 
+![](JHU_5.1_Personal_Activity_Tracking_files/figure-html/unnamed-chunk-5-1.png) 
 
 The spike down towards 0 is again due to missing values and will be removed later. Otherwise, the distribution looks normally distributed. The mean and median of the distribution are 9354 (as calculated before) and 10395, respectively.
 
@@ -196,7 +196,7 @@ g2 <- (ggplot(mean_by_time, aes(Time, Average.Steps))
 g2
 ```
 
-![](5.1_Personal_Activity_Tracking_files/figure-html/unnamed-chunk-7-1.png) 
+![](JHU_5.1_Personal_Activity_Tracking_files/figure-html/unnamed-chunk-7-1.png) 
 
 Specifically, the participant usually takes the most steps (206) between 8:35 and 8:40 AM.
 
@@ -210,7 +210,7 @@ mean_by_time[which.max(mean_by_time$Average.Steps),]
 ## 
 ##                  Time Average.Steps
 ##                (time)         (dbl)
-## 1 2015-09-07 08:35:00      206.1698
+## 1 2015-10-06 08:35:00      206.1698
 ```
 
 ## Question 3: How can we deal with missing values?
@@ -249,7 +249,7 @@ g3 <- (ggplot(sum_NA_by_day, aes(Date, Missing))
 g3
 ```
 
-![](5.1_Personal_Activity_Tracking_files/figure-html/unnamed-chunk-10-1.png) 
+![](JHU_5.1_Personal_Activity_Tracking_files/figure-html/unnamed-chunk-10-1.png) 
 
 Most days have exactly 0 missing values, but for 8 days there are 288 missing values, which is the amount of 5 minute intervals in a day. In other words, for those 8 days no data were collected. They appear to be randomly distributed over the 2-month observation period. But do they tend to occur on a particular day of the week? If so, it could skew our daily activity pattern.
 
@@ -284,7 +284,7 @@ g4 <- (ggplot(sum_NA_by_time, aes(Time, Missing))
 g4
 ```
 
-![](5.1_Personal_Activity_Tracking_files/figure-html/unnamed-chunk-12-1.png) 
+![](JHU_5.1_Personal_Activity_Tracking_files/figure-html/unnamed-chunk-12-1.png) 
 
 Although the missing data are not harming our calculated average daily activity pattern, we did see earlier that they are changing the distribution of steps taken per day by putting a spike at 0. So we would like to fill in these missing values if we can. To do so, we can put in the number of steps we expect the participant to have taken during each 5 minute interval. In other words, we insert the average number of steps across all days for that 5 minute interval. This should not change the average daily activity pattern we saw earlier.
 
@@ -325,7 +325,7 @@ g5 <- (ggplot(mean_by_time_fill, aes(Time, Average.Steps.Fill))
 g5
 ```
 
-![](5.1_Personal_Activity_Tracking_files/figure-html/unnamed-chunk-15-1.png) 
+![](JHU_5.1_Personal_Activity_Tracking_files/figure-html/unnamed-chunk-15-1.png) 
 
 ```r
 sum(mean_by_time_fill$Average.Steps.Fill)
@@ -361,7 +361,7 @@ g6 <- (ggplot(sum_by_day_fill, aes(Steps.Fill))
 g6
 ```
 
-![](5.1_Personal_Activity_Tracking_files/figure-html/unnamed-chunk-16-1.png) 
+![](JHU_5.1_Personal_Activity_Tracking_files/figure-html/unnamed-chunk-16-1.png) 
 
 ```r
 mean(sum_by_day_fill$Steps.Fill)
@@ -434,7 +434,7 @@ g7 <- (ggplot(mean_by_time_weekend, aes(Time, Average.Steps))
 g7
 ```
 
-![](5.1_Personal_Activity_Tracking_files/figure-html/unnamed-chunk-18-1.png) 
+![](JHU_5.1_Personal_Activity_Tracking_files/figure-html/unnamed-chunk-18-1.png) 
 
 First, note that the participant tends to take more steps on weekend-days (10856 steps) than on weekdays (8820 steps). Second, the participant wakes up later on weekend days (~8 AM) compared with weekdays (~6 AM). Third, on the weekends there is a moderate amount of activity between 8 and 9 PM that is not there on the weekdays.
 
