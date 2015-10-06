@@ -13,3 +13,5 @@ You can view the files by opening the .md files, or by visiting the following pa
 **JHU 5.1**: http://jhallock7.github.io/Coursera-Data-Science-Projects/html/JHU_5.1_Personal_Activity_Tracking.html
 
 **JHU 6.1**: http://jhallock7.github.io/Coursera-Data-Science-Projects/html/JHU_6.1_CLT_Simulation.html
+
+**JHU 6.2**: http://jhallock7.github.io/Coursera-Data-Science-Projects/html/JHU_6.2_Hypothesis_Testing.html
