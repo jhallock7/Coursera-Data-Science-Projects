@@ -50,16 +50,16 @@ var(means_40)
 
 Below we show the histograms of the `exp` and `means_40` variables, which roughly correspond to the population and sampling distributions, respectively.  Vertical lines are placed at the means. As calculated above, the sampling distribution is centered at 5.02, roughly the same as the population mean of 5.0, and has standard deviation $\sqrt{0.609} = 0.781$, in good agreement with the theoretical value of $1 / (\lambda \sqrt{n}) = 1/(0.2 \sqrt{40}) = 0.791$.
 
-<img src="6.1_CLT_Simulation_files/figure-html/unnamed-chunk-5-1.png" title="" alt="" style="display: block; margin: auto;" />
+<img src="JHU_6.1_CLT_Simulation_files/figure-html/unnamed-chunk-5-1.png" title="" alt="" style="display: block; margin: auto;" />
 
-<img src="6.1_CLT_Simulation_files/figure-html/unnamed-chunk-6-1.png" title="" alt="" style="display: block; margin: auto;" />
+<img src="JHU_6.1_CLT_Simulation_files/figure-html/unnamed-chunk-6-1.png" title="" alt="" style="display: block; margin: auto;" />
 
 
 The sampling distribution looks similar to a normal distribution, but to make a direct comparison, we must standardize the `means_40` variable, meaning we subtract off the mean and divide by the standard deviation. Below we plot the standardized `mean_40` with a normal density curve.
 
 
 
-<img src="6.1_CLT_Simulation_files/figure-html/unnamed-chunk-8-1.png" title="" alt="" style="display: block; margin: auto;" />
+<img src="JHU_6.1_CLT_Simulation_files/figure-html/unnamed-chunk-8-1.png" title="" alt="" style="display: block; margin: auto;" />
 
 Here we can directly see that the sampling distribution is roughly Gaussian distributed, the content of the central limit theorem. This is in spite of the highly non-Gaussian population distribution. If we were to increase the sample size above 40, the distribution would continue to converge to the Gaussian, and the variance would decrease, further concentrating the distribution about the population mean. In other words, larger sample sizes result in better estimates of the population mean. This intuitively makes sense, but the central limit theorem proves it to be true, and more so, tells us *just how good* of an estimate it will be.
 
