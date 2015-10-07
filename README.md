@@ -15,3 +15,5 @@ You can view the files by opening the .md files (tables won't display properly),
 **JHU 6.1**: http://jhallock7.github.io/Coursera-Data-Science-Projects/html/JHU_6.1_CLT_Simulation.html
 
 **JHU 6.2**: http://jhallock7.github.io/Coursera-Data-Science-Projects/html/JHU_6.2_Hypothesis_Testing.html
+
+**JHU 7.1**: http://jhallock7.github.io/Coursera-Data-Science-Projects/html/JHU_7.1_Linear_Regression.html

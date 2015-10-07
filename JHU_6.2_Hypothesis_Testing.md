@@ -58,37 +58,31 @@ Note that these results are also reflected in the 95% confidence intervals for t
 
 
 
-Table: Effect of supplement per dose
-
-  Group 1       Group 2      Mean Increase (2 - 1) (µm)    95% C.I. (µm)    t-value     p-value  
-------------  ------------  ----------------------------  ---------------  ----------  ----------
- VC, 0.5 µg    OJ, 0.5 µg               5.25               (1.72, 8.78)     3.17000     0.006359 
- VC, 1.0 µg    OJ, 1.0 µg               5.93                (2.8, 9.06)     4.03300     0.001038 
- VC, 2.0 µg    OJ, 2.0 µg              -0.08               (-3.8, 3.64)     -0.04614    0.963900 
+|  Group 1   |  Group 2   | Mean Increase (2 - 1) (µm) | 95% C.I. (µm) | t-value  | p-value  |
+|:----------:|:----------:|:--------------------------:|:-------------:|:--------:|:--------:|
+| VC, 0.5 µg | OJ, 0.5 µg |            5.25            | (1.72, 8.78)  | 3.17000  | 0.006359 |
+| VC, 1.0 µg | OJ, 1.0 µg |            5.93            |  (2.8, 9.06)  | 4.03300  | 0.001038 |
+| VC, 2.0 µg | OJ, 2.0 µg |           -0.08            | (-3.8, 3.64)  | -0.04614 | 0.963900 |
 
 Table 2 shows the results comparing different pairs of dosages of orange juice. All of the p-values are below 0.05, and likewise, 0 is in none of the 95% confidence intervals for the true difference in mean tooth length between each population. Therefore we can assume with roughly 95% certainty that each increase in dose of orange juice does result in larger tooth lengths.
 
 
 
 
-Table: Effect of dose change for orange juice
-
-  Group 1       Group 2      Mean Increase (2 - 1) (µm)    95% C.I. (µm)    t-value     p-value  
-------------  ------------  ----------------------------  ---------------  ---------  -----------
- OJ, 0.5 µg    OJ, 1.0 µg               9.47               (5.52, 13.42)     5.049     8.785e-05 
- OJ, 1.0 µg    OJ, 2.0 µg               3.36               (0.19, 6.53)      2.248     3.920e-02 
- OJ, 0.5 µg    OJ, 2.0 µg              12.83               (9.32, 16.34)     7.817     1.324e-06 
+|  Group 1   |  Group 2   | Mean Increase (2 - 1) (µm) | 95% C.I. (µm) | t-value |  p-value  |
+|:----------:|:----------:|:--------------------------:|:-------------:|:-------:|:---------:|
+| OJ, 0.5 µg | OJ, 1.0 µg |            9.47            | (5.52, 13.42) |  5.049  | 8.785e-05 |
+| OJ, 1.0 µg | OJ, 2.0 µg |            3.36            | (0.19, 6.53)  |  2.248  | 3.920e-02 |
+| OJ, 0.5 µg | OJ, 2.0 µg |           12.83            | (9.32, 16.34) |  7.817  | 1.324e-06 |
 
 Table 3 shows the results comparing different pairs of dosages of vitamin C (ascorbic acid). Just like for orange juice, all of the p-values are below 0.05 and 0 is in none of the 95% confidence intervals. Therefore we can assume with roughly 95% certainty that each increase in dose of vitamin C does result in larger tooth lengths.
 
 
-Table: Effect of dose change for vitamin C (ascorbic acid)
-
-  Group 1       Group 2      Mean Increase (2 - 1) (µm)    95% C.I. (µm)    t-value     p-value  
-------------  ------------  ----------------------------  ---------------  ---------  -----------
- VC, 0.5 µg    VC, 1.0 µg               8.79               (6.31, 11.27)     7.463     6.811e-07 
- VC, 1.0 µg    VC, 2.0 µg               9.37               (5.69, 13.05)     5.470     9.156e-05 
- VC, 0.5 µg    VC, 2.0 µg              18.16               (14.42, 21.9)    10.390     4.680e-08 
+|  Group 1   |  Group 2   | Mean Increase (2 - 1) (µm) | 95% C.I. (µm) | t-value |  p-value  |
+|:----------:|:----------:|:--------------------------:|:-------------:|:-------:|:---------:|
+| VC, 0.5 µg | VC, 1.0 µg |            8.79            | (6.31, 11.27) |  7.463  | 6.811e-07 |
+| VC, 1.0 µg | VC, 2.0 µg |            9.37            | (5.69, 13.05) |  5.470  | 9.156e-05 |
+| VC, 0.5 µg | VC, 2.0 µg |           18.16            | (14.42, 21.9) | 10.390  | 4.680e-08 |
 
 # Conclusions
 
@@ -168,6 +162,7 @@ print_test = function(t1, t2, t3, G1, G2, G3, G4, G5, G6, caption) {
 
     # Print results
     kable(tests,
+          format = 'markdown',
           col.names = c("Group 1", "Group 2", "Mean Increase (2 - 1) (µm)",
                         "95% C.I. (µm)", "t-value", "p-value"),
           align = 'c', digits = 10, caption = caption)
