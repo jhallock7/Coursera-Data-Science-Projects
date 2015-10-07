@@ -104,6 +104,7 @@ img {
 <p>To start, we first perform a linear regression only between MPG and transmission type. In Table 1 below we see that cars with manual transmissions had on average 7.25 (±1.76 S.E.) more MPG. The p value of this result is extremely small, indicating that this trend is almost surely not due to chance. The residual plot below mirrors Figure 3 above, indicating that the cars predicted to have a MPG of about 24.5 (manual transmissions) have a slightly higher standard deviation for MPG than those with a MPG of about 17 (automatic transmissions). Since our goal is not to <em>predict</em> MPG from transmission type, but only to determine the general effect of transmission type on MPG, the small difference in variance almost surely won’t affect our conclusions.</p>
 <p>So ignoring all other variables that could impact MPG, manual transmission cars tend to get over 7 more MPG than those with automatic transmissions.</p>
 <table>
+<caption>Table 1: MPG vs. Transmission Type</caption>
 <thead>
 <tr class="header">
 <th align="left"></th>
@@ -137,6 +138,7 @@ img {
 <p>Table 2 shows the effect of each variable on MPG with every other variable held fixed. Here we see that manual transmission cars had on average only 2.5 (±2.1 S.E.) more MPG. In other words, switching a car to a manual transmission <em>while holding all other variables constant</em> would increase MPG by an average of 2.5. This is a large reduction from the over 7 MPG we saw above. The reason for this reduction is that the <em>most</em> important indicator of MPG is the vehicle weight (largest coefficient and smallest p value below), with heavier vehicles receiving lower MPG. In Figure 2 we see that cars with automatic transmissions are usually heavier (by ~50%), likely the primary reason why they get lower MPG. Removing this indirect effect on MPG through the vehicle’s weight (and all other variables), manual transmissions <em>directly</em> increase MPG by only 2.5.</p>
 <p>The residual plot below shows that the residuals appear to be independent of the fitted value with roughly constant variance. The <span class="math">\(R^2\)</span> value of the linear fit is 0.87, usually interpreted to mean that the linear model explains 87% of the variability in the data. Together these indicate that a linear model is appropriate and is well fitted to the data. However, the large p value of 0.23 for the manual transmission coefficient indicates that this <em>direct</em> effect of higher MPG for manual transmission cars is not statistically significant enough to infer that it holds for the entire population of cars from which this sample was taken (1973-1974 cars).</p>
 <table>
+<caption>Table 2: MPG vs. All Other Variables</caption>
 <thead>
 <tr class="header">
 <th align="left"></th>
@@ -282,7 +284,6 @@ mtcars =<span class="st"> </span><span class="kw">rename</span>(mtcars,
 
 model1 =<span class="st"> </span><span class="kw">lm</span>(<span class="dt">data =</span> mtcars, <span class="dt">formula =</span> MPG~Transmission)
 <span class="kw">kable</span>(<span class="kw">coef</span>(<span class="kw">summary.lm</span>(model1)),
-      <span class="dt">format =</span> <span class="st">'markdown'</span>,
       <span class="dt">digits=</span><span class="dv">5</span>,
       <span class="dt">caption =</span> <span class="st">&quot;Table 1: MPG vs. Transmission Type&quot;</span>)
 mtcars$MPG_hat_1 =<span class="st"> </span><span class="kw">predict.lm</span>(model1, mtcars)
@@ -303,7 +304,6 @@ mtcars$Residuals_1 =<span class="st"> </span><span class="ot">NULL</span>
 
 model2 =<span class="st"> </span><span class="kw">lm</span>(<span class="dt">data =</span> mtcars, <span class="dt">formula =</span> MPG~.)
 <span class="kw">kable</span>(<span class="kw">coef</span>(<span class="kw">summary.lm</span>(model2)),
-      <span class="dt">format =</span> <span class="st">'markdown'</span>,
       <span class="dt">digits=</span><span class="dv">5</span>,
       <span class="dt">caption =</span> <span class="st">&quot;Table 2: MPG vs. All Other Variables&quot;</span>)
 mtcars$MPG_hat_2 =<span class="st"> </span><span class="kw">predict.lm</span>(model2, mtcars)
