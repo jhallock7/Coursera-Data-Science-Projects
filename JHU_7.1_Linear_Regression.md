@@ -59,21 +59,19 @@ The residual plot below shows that the residuals appear to be independent of the
 
 
 
-Table: Table 2: MPG vs. All Other Variables
-
-                      Estimate   Std. Error    t value   Pr(>|t|)
--------------------  ---------  -----------  ---------  ---------
-(Intercept)           12.30337     18.71788    0.65731    0.51812
-Cylinders             -0.11144      1.04502   -0.10664    0.91609
-Displacement           0.01334      0.01786    0.74676    0.46349
-Horsepower            -0.02148      0.02177   -0.98684    0.33496
-Axle_Ratio             0.78711      1.63537    0.48130    0.63528
-Weight                -3.71530      1.89441   -1.96119    0.06325
-Qrt_Mile_Time          0.82104      0.73084    1.12341    0.27394
-V_S                    0.31776      2.10451    0.15099    0.88142
-TransmissionManual     2.52023      2.05665    1.22540    0.23399
-Num_Gears              0.65541      1.49326    0.43891    0.66521
-Num_Carburetors       -0.19942      0.82875   -0.24063    0.81218
+|                   | Estimate| Std. Error|  t value| Pr(>&#124;t&#124;)|
+|:------------------|--------:|----------:|--------:|------------------:|
+|(Intercept)        | 12.30337|   18.71788|  0.65731|            0.51812|
+|Cylinders          | -0.11144|    1.04502| -0.10664|            0.91609|
+|Displacement       |  0.01334|    0.01786|  0.74676|            0.46349|
+|Horsepower         | -0.02148|    0.02177| -0.98684|            0.33496|
+|Axle_Ratio         |  0.78711|    1.63537|  0.48130|            0.63528|
+|Weight             | -3.71530|    1.89441| -1.96119|            0.06325|
+|Qrt_Mile_Time      |  0.82104|    0.73084|  1.12341|            0.27394|
+|V_S                |  0.31776|    2.10451|  0.15099|            0.88142|
+|TransmissionManual |  2.52023|    2.05665|  1.22540|            0.23399|
+|Num_Gears          |  0.65541|    1.49326|  0.43891|            0.66521|
+|Num_Carburetors    | -0.19942|    0.82875| -0.24063|            0.81218|
 
 <img src="JHU_7.1_Linear_Regression_files/figure-html/unnamed-chunk-5-1.png" title="" alt="" style="display: block; margin: auto;" />
 
