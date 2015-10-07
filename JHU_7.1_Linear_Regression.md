@@ -121,7 +121,7 @@ mtcars = rename(mtcars,
 
 (ggplot(mtcars, aes(y = MPG, x = Weight, color = Transmission))
     + geom_point()
-    + ylab('Weight (lb/1000)')
+    + xlab('Weight (lb/1000)')
     + ggtitle("Figure 2"))
 
 (ggplot(mtcars, aes(x = MPG, fill = Transmission))
