@@ -171,6 +171,7 @@ print_test = function(t1, t2, t3, G1, G2, G3, G4, G5, G6, caption) {
 ########################################################
 ## Tests for differential supplement effect per dose
 ########################################################
+
 # Isolate each separate dose/supplement combination
 OJ_0.5 = filter(ToothGrowth, Supplement == "OJ" & dose == 0.5)[[1]]
 VC_0.5 = filter(ToothGrowth, Supplement == "VC" & dose == 0.5)[[1]]
