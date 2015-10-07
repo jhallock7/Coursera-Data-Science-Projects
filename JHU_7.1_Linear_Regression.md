@@ -121,6 +121,7 @@ mtcars = rename(mtcars,
 
 (ggplot(mtcars, aes(y = MPG, x = Weight, color = Transmission))
     + geom_point()
+    + xlab('Weight (lb/1000)')
     + ggtitle("Figure 2"))
 
 (ggplot(mtcars, aes(x = MPG, fill = Transmission))
@@ -133,7 +134,6 @@ mtcars = rename(mtcars,
 
 model1 = lm(data = mtcars, formula = MPG~Transmission)
 kable(coef(summary.lm(model1)),
-      format = 'markdown',
       digits=5,
       caption = "Table 1: MPG vs. Transmission Type")
 mtcars$MPG_hat_1 = predict.lm(model1, mtcars)
@@ -141,8 +141,8 @@ mtcars = mutate(mtcars, Residuals_1 = MPG - MPG_hat_1)
 qplot(y = Residuals_1,
       x = MPG_hat_1,
       color = Transmission,
-      xlab = "Fitted Value",
-      ylab = "Residual",
+      xlab = "Fitted Value (mpg)",
+      ylab = "Residual (mpg)",
       main = "Figure 4: MPG vs Transmission Type Residuals")
 
 mtcars$MPG_hat_1 = NULL
@@ -154,7 +154,6 @@ mtcars$Residuals_1 = NULL
 
 model2 = lm(data = mtcars, formula = MPG~.)
 kable(coef(summary.lm(model2)),
-      format = 'markdown',
       digits=5,
       caption = "Table 2: MPG vs. All Other Variables")
 mtcars$MPG_hat_2 = predict.lm(model2, mtcars)
@@ -163,8 +162,8 @@ qplot(data = mtcars,
       y = Residuals_2,
       x = MPG_hat_2,
       color = Transmission,
-      xlab = "Fitted Value",
-      ylab = "Residual",
+      xlab = "Fitted Value (mpg)",
+      ylab = "Residual (mpg)",
       main = "Figure 5: MPG vs All other predictors Residuals")
 ```
 
