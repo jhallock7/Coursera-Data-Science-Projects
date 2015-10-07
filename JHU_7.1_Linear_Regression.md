@@ -42,12 +42,10 @@ To start, we first perform a linear regression only between MPG and transmission
 So ignoring all other variables that could impact MPG, manual transmission cars tend to get over 7 more MPG than those with automatic transmissions.
 
 
-Table: Table 1: MPG vs. Transmission Type
-
-                      Estimate   Std. Error    t value   Pr(>|t|)
--------------------  ---------  -----------  ---------  ---------
-(Intercept)           17.14737      1.12460   15.24749    0.00000
-TransmissionManual     7.24494      1.76442    4.10613    0.00029
+|                   | Estimate| Std. Error|  t value| Pr(>&#124;t&#124;)|
+|:------------------|--------:|----------:|--------:|------------------:|
+|(Intercept)        | 17.14737|    1.12460| 15.24749|            0.00000|
+|TransmissionManual |  7.24494|    1.76442|  4.10613|            0.00029|
 
 <img src="JHU_7.1_Linear_Regression_files/figure-html/unnamed-chunk-4-1.png" title="" alt="" style="display: block; margin: auto;" />
 
@@ -61,19 +59,21 @@ The residual plot below shows that the residuals appear to be independent of the
 
 
 
-|                   | Estimate| Std. Error|  t value| Pr(>&#124;t&#124;)|
-|:------------------|--------:|----------:|--------:|------------------:|
-|(Intercept)        | 12.30337|   18.71788|  0.65731|            0.51812|
-|Cylinders          | -0.11144|    1.04502| -0.10664|            0.91609|
-|Displacement       |  0.01334|    0.01786|  0.74676|            0.46349|
-|Horsepower         | -0.02148|    0.02177| -0.98684|            0.33496|
-|Axle_Ratio         |  0.78711|    1.63537|  0.48130|            0.63528|
-|Weight             | -3.71530|    1.89441| -1.96119|            0.06325|
-|Qrt_Mile_Time      |  0.82104|    0.73084|  1.12341|            0.27394|
-|V_S                |  0.31776|    2.10451|  0.15099|            0.88142|
-|TransmissionManual |  2.52023|    2.05665|  1.22540|            0.23399|
-|Num_Gears          |  0.65541|    1.49326|  0.43891|            0.66521|
-|Num_Carburetors    | -0.19942|    0.82875| -0.24063|            0.81218|
+Table: Table 2: MPG vs. All Other Variables
+
+                      Estimate   Std. Error    t value   Pr(>|t|)
+-------------------  ---------  -----------  ---------  ---------
+(Intercept)           12.30337     18.71788    0.65731    0.51812
+Cylinders             -0.11144      1.04502   -0.10664    0.91609
+Displacement           0.01334      0.01786    0.74676    0.46349
+Horsepower            -0.02148      0.02177   -0.98684    0.33496
+Axle_Ratio             0.78711      1.63537    0.48130    0.63528
+Weight                -3.71530      1.89441   -1.96119    0.06325
+Qrt_Mile_Time          0.82104      0.73084    1.12341    0.27394
+V_S                    0.31776      2.10451    0.15099    0.88142
+TransmissionManual     2.52023      2.05665    1.22540    0.23399
+Num_Gears              0.65541      1.49326    0.43891    0.66521
+Num_Carburetors       -0.19942      0.82875   -0.24063    0.81218
 
 <img src="JHU_7.1_Linear_Regression_files/figure-html/unnamed-chunk-5-1.png" title="" alt="" style="display: block; margin: auto;" />
 
@@ -93,7 +93,7 @@ library(knitr)
 library(dplyr)
 
 ############################################################
-## Load and reformat data
+## Load data, rename variables
 ############################################################
 
 data(mtcars)
@@ -135,6 +135,7 @@ mtcars = rename(mtcars,
 
 model1 = lm(data = mtcars, formula = MPG~Transmission)
 kable(coef(summary.lm(model1)),
+      format = 'markdown',
       digits=5,
       caption = "Table 1: MPG vs. Transmission Type")
 mtcars$MPG_hat_1 = predict.lm(model1, mtcars)
@@ -155,6 +156,7 @@ mtcars$Residuals_1 = NULL
 
 model2 = lm(data = mtcars, formula = MPG~.)
 kable(coef(summary.lm(model2)),
+      format = 'markdown',
       digits=5,
       caption = "Table 2: MPG vs. All Other Variables")
 mtcars$MPG_hat_2 = predict.lm(model2, mtcars)
