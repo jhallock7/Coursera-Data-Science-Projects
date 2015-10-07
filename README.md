@@ -4,7 +4,7 @@ Data science projects for Coursera courses
 This is a collection of small data science projects I completed for the
 Johns Hopkins University Data Science Specialization on Coursera.
 
-You can view the files by opening the .md files (tables won't display properly), or by visiting the following html pages:
+You can view the projects in plain Markdown by opening the .md files or as HTMLs by visiting the following pages:
 
 **JHU 4.1**: http://jhallock7.github.io/Coursera-Data-Science-Projects/html/JHU_4.1_Electric_Power_Consumption.html
 
